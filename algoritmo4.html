@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie de Fibonacci</title>
+    <style>
+        body {
+            background-color: #000000; /* Fondo negro */
+            font-family: Arial, sans-serif; /* Fuente general */
+            color: #ffffff; /* Texto blanco */
+            text-align: center; /* Centra el texto */
+        }
+
+        .content-box {
+            background-color: #ff1493; /* Rosa fucsia */
+            color: #ffffff; /* Texto blanco */
+            padding: 20px; /* Espacio interior del cuadro */
+            border-radius: 8px; /* Bordes redondeados */
+            margin: 20px auto; /* Centra el cuadro horizontalmente */
+            max-width: 600px; /* Ancho máximo del cuadro */
+            border: 1px solid #ddd; /* Borde gris claro */
+        }
+
+        .content-box input,
+        .content-box button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            margin: 5px;
+        }
+
+        .content-box input {
+            width: 80%;
+            max-width: 200px;
+            background-color: #ffffff; /* Fondo blanco para el input */
+            color: #ff1493; /* Texto rosa fucsia */
+        }
+
+        .content-box button {
+            background-color: #ffffff; /* Fondo blanco para el botón */
+            color: #ff1493; /* Texto rosa fucsia */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        }
+
+        .content-box button:hover {
+            background-color: #ff1493; /* Fondo rosa fucsia al pasar el cursor */
+            color: #ffffff; /* Texto blanco al pasar el cursor */
+        }
+
+        .content-box ul {
+            list-style-type: none; /* Elimina viñetas de la lista */
+            padding: 0; /* Elimina espacio interior izquierdo */
+        }
+
+        .content-box ul li {
+            margin: 10px 0; /* Espacio entre elementos de la lista */
+        }
+
+        .content-box a {
+            color: #ffffff; /* Color del texto del enlace */
+            text-decoration: none; /* Elimina subrayado */
+            border-bottom: 1px solid #ffffff; /* Subrayado blanco */
+        }
+
+        .content-box a:hover {
+            border-bottom: 1px solid #ff1493; /* Subrayado rosa fucsia al pasar el cursor */
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box">
+        <h1>Serie de Fibonacci</h1>
+        <label for="limite">Introduce el límite:</label>
+        <input type="number" id="limite" min="1">
+        <button onclick="generarFibonacci()">Generar</button>
+
+        <ul id="resultados"></ul>
+
+        <p><a href="index.html">Regresar</a></p>
+    </div>
+
+    <script>
+        function generarFibonacci() {
+            const limite = parseInt(document.getElementById('limite').value);
+            const resultados = document.getElementById('resultados');
+            resultados.innerHTML = ''; // Limpiar resultados anteriores
+
+            let a = 0, b = 1;
+            let contador = 0;
+
+            while (contador < limite) {
+                const item = document.createElement('li');
+                item.textContent = a;
+                resultados.appendChild(item);
+
+                const siguiente = a + b;
+                a = b;
+                b = siguiente;
+
+                contador++;
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglo 1</title>
+    <!-- Enlazamos el archivo de JavaScript -->
+    <script src="functArreglo1.js" defer></script>
+    <style>
+        body {
+            background-color: #fff7fd;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .title-box {
+            background-color: #ffffff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .spaced {
+            margin-left: 40px;
+        }
+
+        .large-title {
+            font-size: 3em;
+            text-align: center;
+            color: #ff1493;
+            margin: 20px 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .highlighted-title {
+            color: #ff1493;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .content-box {
+            background-color: #ff1493;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            border: 1px solid #ddd;
+        }
+
+        .content-box p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .button-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .button-list input, .button-list a {
+            background-color: #ffffff;
+            color: #ff1493;
+            border: 2px solid #ff1493;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button-list input:hover, .button-list a:hover {
+            background-color: #ff1493;
+            color: #ffffff;
+        }
+
+        .table-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ff1493;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #ff1493;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Título del documento -->
+    <div class="title-box">
+        <h4>「 ✦ ADRIANA SANCHEZ VALENZUELA </h4>
+        <h4 class="spaced">FUNDAMENTOS DE COMPUTACION III ✦ 」</h4>
+    </div>
+
+    <!-- Título grande -->
+    <h1 class="large-title">𓍢ִ໋🌷͙֒UNIDAD DIDACTICA 1𓍢ִ໋🌷͙֒</h1>
+
+    <!-- Subtítulo -->
+    <h2 class="highlighted-title">─── ⋆⋅☆⋅⋆ ── Arreglo de Enteros ── ⋆⋅☆⋅⋆ ──</h2>
+    
+    <!-- Caja de contenido para la captura del arreglo -->
+    <div class="content-box">
+        <p><strong>Capture e imprima un arreglo de 10 elementos de tipo entero.</strong></p>
+        <p>El arreglo se debe de imprimir de forma horizontal y vertical. Muestre el índice de cada elemento. La captura de elementos se debe de cancelar al introducir el último elemento. Incluya un botón de reinicio.</p>
+
+        <!-- Área para captura del arreglo -->
+        <p id="arreglo">Capture el elemento [0]</p>
+        <input type="number" id="datos" onkeydown="if(event.key === '.'){event.preventDefault();}" required><br><br>
+
+        <p id="error" class="error"></p>
+
+        <!-- Botones de acción -->
+        <div class="button-list">
+            <input type="submit" value="Capturar" id="botoncapturar" onclick="Capturar()">
+            <input type="button" value="Reiniciar" onclick="Reiniciar()">
+            <a href="index.html">Regresar al Menú</a>
+        </div>
+    </div>
+
+    <!-- Tablas para mostrar el arreglo en horizontal y vertical -->
+    <div class="table-container">
+        <table border="1">
+            <tr id="renglon"></tr>
+            <tr id="renglon2"></tr>
+        </table>
+        <br><br>
+        <table id="tablaV" border="1"></table>
+    </div>
+</body>
+</html>

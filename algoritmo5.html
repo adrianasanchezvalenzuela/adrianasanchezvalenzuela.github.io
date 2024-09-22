@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de π</title>
+    <style>
+        body {
+            background-color: #000000; /* Fondo negro */
+            font-family: Arial, sans-serif; /* Fuente general */
+            color: #ffffff; /* Texto blanco */
+            text-align: center; /* Centra el texto */
+        }
+
+        .container {
+            background-color: #ff1493; /* Rosa fucsia */
+            color: #ffffff; /* Texto blanco */
+            padding: 20px; /* Espacio interior del cuadro */
+            border-radius: 8px; /* Bordes redondeados */
+            margin: 20px auto; /* Centra el cuadro horizontalmente */
+            max-width: 600px; /* Ancho máximo del cuadro */
+            border: 1px solid #ddd; /* Borde gris claro */
+        }
+
+        .container input[type="text"],
+        .container input[type="button"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            margin: 5px;
+        }
+
+        .container input[type="text"] {
+            width: 80%;
+            max-width: 200px;
+            background-color: #ffffff; /* Fondo blanco para el input */
+            color: #ff1493; /* Texto rosa fucsia */
+        }
+
+        .container input[type="button"] {
+            background-color: #ffffff; /* Fondo blanco para el botón */
+            color: #ff1493; /* Texto rosa fucsia */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        }
+
+        .container input[type="button"]:hover {
+            background-color: #ff1493; /* Fondo rosa fucsia al pasar el cursor */
+            color: #ffffff; /* Texto blanco al pasar el cursor */
+        }
+
+        .error {
+            color: #ff0000; /* Texto rojo para el error */
+            margin-top: 10px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .container a {
+            color: #ffffff; /* Color del texto del enlace */
+            text-decoration: none; /* Elimina subrayado */
+            border-bottom: 1px solid #ffffff; /* Subrayado blanco */
+        }
+
+        .container a:hover {
+            border-bottom: 1px solid #ff1493; /* Subrayado rosa fucsia al pasar el cursor */
+        }
+    </style>
+    <script>
+        function Calcularpi() {
+            var a = parseInt(document.getElementById("num1").value);
+            var error = document.getElementById("error");
+            var output = document.getElementById("out");
+
+            output.innerHTML = "";
+            error.innerHTML = "";
+            error.classList.remove('visible');
+
+            if (!isNaN(a) && a > 0) {
+                var Sucesion = "";
+                var masmenos = false;
+                var pi = 0.0;
+
+                for (var i = 1; i < a * 2; i += 2) {
+                    if (masmenos) {
+                        Sucesion += `1/${i} + `;
+                        pi -= 1.0 / i;
+                        masmenos = false;
+                    } else {
+                        Sucesion += `1/${i} - `;
+                        pi += 1.0 / i;
+                        masmenos = true;
+                    }
+                }
+
+                pi *= 4;
+
+                Sucesion = Sucesion.slice(0, -2);
+                output.innerHTML = `Resultado:<br> Las iteraciones hasta ${a} son:<br> ${Sucesion}<br><br>`;
+                output.innerHTML += `Pi es igual a: ${pi}`;
+            } else {
+                error.innerHTML = "Ha ocurrido un error, no es un número o no es entero positivo.";
+                error.classList.add('visible');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Algoritmo 5: Cálculo de π</h1>
+        <p> Introduzca el número de iteraciones.</p>
+        <input type="text" id="num1" placeholder="Número de iteraciones">
+        <input type="button" value="Calcular" onclick="Calcularpi()">
+        <div id="error" class="error"></div>
+        <div id="out" class="result">Resultado:</div>
+        <br>
+        <input type="button" value="< Volver" onclick="window.location.href='index.html';">
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 1</title>
+    <style>
+        body {
+            background-color: #000000; /* Fondo negro */
+            font-family: Arial, sans-serif; /* Fuente general */
+            color: #ffffff; /* Texto blanco */
+            text-align: center; /* Centra el texto */
+        }
+
+        .content-box {
+            background-color: #ff1493; /* Rosa fucsia */
+            color: #ffffff; /* Texto blanco */
+            padding: 20px; /* Espacio interior del cuadro */
+            border-radius: 8px; /* Bordes redondeados */
+            margin: 20px auto; /* Centra el cuadro horizontalmente */
+            max-width: 600px; /* Ancho máximo del cuadro */
+            border: 1px solid #ddd; /* Borde gris claro */
+        }
+
+        .content-box input[type="text"] {
+            padding: 10px; /* Espacio interior del campo de texto */
+            margin: 10px 0; /* Espacio arriba y abajo del campo de texto */
+            border-radius: 5px; /* Bordes redondeados */
+            border: 2px solid #ff1493; /* Borde rosa fucsia */
+            font-size: 1em; /* Tamaño del texto */
+            background-color: #333333; /* Fondo gris oscuro para el campo de texto */
+            color: #ffffff; /* Texto blanco en el campo de texto */
+        }
+
+        .content-box input[type="button"] {
+            background-color: #ffffff; /* Fondo blanco para el botón */
+            color: #ff1493; /* Texto rosa fucsia */
+            border: 2px solid #ff1493; /* Borde rosa fucsia */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px 20px; /* Espacio interior del botón */
+            font-size: 1.2em; /* Tamaño del texto en el botón */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            font-family: 'Arial', sans-serif; /* Fuente del texto en el botón */
+        }
+
+        .content-box input[type="button"]:hover {
+            background-color: #ff1493; /* Fondo rosa fucsia al pasar el cursor */
+            color: #ffffff; /* Texto blanco al pasar el cursor */
+        }
+
+        .content-box p {
+            margin: 20px 0; /* Espacio arriba y abajo del párrafo */
+        }
+
+        .content-box a {
+            color: #ffffff; /* Color del texto del enlace */
+            text-decoration: none; /* Elimina subrayado */
+            border-bottom: 1px solid #ffffff; /* Subrayado blanco */
+        }
+
+        .content-box a:hover {
+            border-bottom: 1px solid #ff1493; /* Subrayado rosa fucsia al pasar el cursor */
+        }
+    </style>
+    <script>
+        function multiplosDe3() {
+            if (!isNaN(document.getElementById("num1").value) && !isNaN(document.getElementById("num2").value)) {
+                var a = parseInt(document.getElementById("num1").value);
+                var b = parseInt(document.getElementById("num2").value);
+                var multiplos= " ";
+                if (a < b) {
+                    for (let i=a; i<=b; i++){
+                        if(i%3==0){
+                            multiplos+= `${i}<br>`;
+                        }
+                    }
+                } else {
+                    for (let i=a; i>=b; i--){
+                        if(i%3==0){
+                            multiplos+= `${i}<br>`;
+                        }
+                    }
+                }
+                
+                document.getElementById("out").innerHTML=`Resultado: <br> Los múltiplos de 3 entre ${a} y ${b} son: <br> ${multiplos}`;
+            } else {
+                document.getElementById("out").innerHTML=`Existe un error en el tipo de datos ingresados`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="content-box">
+        <h3>Encontrar e imprimir todos los números comprendidos entre dos enteros que son múltiplos de 3:</h3>
+        Dato 1 <input type="text" id="num1"> <br>
+        Dato 2 <input type="text" id="num2"> <br>
+        <input type="button" value="Encontrar valor" onclick="multiplosDe3()">
+        <p id="out">Resultado</p> <br>
+
+        <p><a href="index.html">Regresar</a></p>
+    </div>
+</body>
+</html>

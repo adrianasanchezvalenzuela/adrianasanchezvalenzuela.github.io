@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrado Mágico</title>
+    <script>
+        function Generar() {
+            document.getElementById("cuadrado").innerHTML = "";
+            var tabla = document.getElementById("cuadrado");
+            var lado = parseInt(document.getElementById("lados").value);
+            var nuevaFila, celda;
+
+            for (var r = 0; r < lado; r++) {
+                nuevaFila = tabla.insertRow(-1);
+                celda = nuevaFila.insertCell(-1); // Celda para la suma de la diagonal principal
+                celda.innerHTML = ""; // Espacio vacío para la suma de la diagonal
+
+                for (var c = 0; c < lado; c++) {
+                    celda = nuevaFila.insertCell(-1);
+                    var entrada = document.createElement("input");
+                    entrada.setAttribute("type", "number");
+                    entrada.setAttribute("value", Aleatorio());
+                    entrada.setAttribute("required", "required");
+                    entrada.setAttribute("style", "width:50px; color:blue; font-weight: bold;");
+                    celda.appendChild(entrada);
+                }
+                celda = nuevaFila.insertCell(-1); // Espacio vacío para la suma de la fila
+            }
+
+            nuevaFila = tabla.insertRow(-1);
+            celda = nuevaFila.insertCell(-1); // Celda para la suma de la diagonal principal
+            celda.innerHTML = ""; // Espacio vacío
+
+            for (var c = 0; c < lado + 1; c++) {
+                celda = nuevaFila.insertCell(-1);
+                celda.innerHTML = ""; // Espacio vacío para la suma de columnas
+            }
+        }
+
+        function Aleatorio() {
+            return Math.floor(Math.random() * 100);
+        }
+
+        function Calcular() {
+            var tabla = document.getElementById("cuadrado");
+            var lado = parseInt(document.getElementById("lados").value);
+            var sumaFila, sumaColumna, sumaDiagonal1 = 0, sumaDiagonal2 = 0;
+            var esMagico = true;
+
+            for (let r = 0; r < lado; r++) {
+                sumaFila = 0;
+                for (let c = 0; c < lado; c++) {
+                    sumaFila += parseInt(tabla.rows[r].cells[c + 1].querySelector('input').value);
+                }
+                tabla.rows[r].cells[lado + 1].innerHTML = sumaFila;
+            }
+
+            for (let c = 0; c < lado; c++) {
+                sumaColumna = 0;
+                for (let r = 0; r < lado; r++) {
+                    sumaColumna += parseInt(tabla.rows[r].cells[c + 1].querySelector('input').value);
+                }
+                tabla.rows[lado].cells[c + 1].innerHTML = sumaColumna;
+            }
+
+            for (let i = 0; i < lado; i++) {
+                sumaDiagonal1 += parseInt(tabla.rows[i].cells[i + 1].querySelector('input').value);
+                sumaDiagonal2 += parseInt(tabla.rows[i].cells[lado - i].querySelector('input').value);
+            }
+
+            tabla.rows[lado].cells[0].innerHTML = sumaDiagonal2; // Diagonal inversa
+            tabla.rows[lado].cells[lado + 1].innerHTML = sumaDiagonal1; // Diagonal principal
+
+            var constanteMagica = tabla.rows[0].cells[lado + 1].innerHTML;
+            for (let r = 0; r < lado; r++) {
+                if (tabla.rows[r].cells[lado + 1].innerHTML != constanteMagica) {
+                    esMagico = false;
+                }
+            }
+            for (let c = 0; c < lado; c++) {
+                if (tabla.rows[lado].cells[c + 1].innerHTML != constanteMagica) {
+                    esMagico = false;
+                }
+            }
+            if (sumaDiagonal1 != constanteMagica || sumaDiagonal2 != constanteMagica) {
+                esMagico = false;
+            }
+
+            document.getElementById("verificar").innerHTML = esMagico ? "¡Es cuadrado mágico!" : "No es cuadrado mágico";
+            document.getElementById("verificar").style.color = esMagico ? "blue" : "crimson";
+        }
+
+        function EjemploCuadrado() {
+            var tabla = document.getElementById("cuadrado");
+            for (var r = 0; r < document.getElementById("lados").value; r++) {
+                for (var c = 0; c < document.getElementById("lados").value; c++) {
+                    tabla.rows[r].cells[c + 1].querySelector('input').value = Aleatorio();
+                }
+            }
+            tabla.rows[r - 1].cells[c].querySelector('input').value = -1;
+            document.getElementById("verificar").innerHTML = "No es cuadrado mágico";
+            document.getElementById("verificar").style.color = "crimson";
+        }
+
+        function EjemploMagico() {
+            var tabla = document.getElementById("cuadrado");
+            var valorMagico = Math.floor(Math.random() * 100);
+            for (let r = 0; r < parseInt(document.getElementById("lados").value); r++) {
+                for (let c = 0; c < parseInt(document.getElementById("lados").value); c++) {
+                    tabla.rows[r].cells[c + 1].querySelector('input').value = valorMagico;
+                }
+            }
+            Calcular();
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fff7fd;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff1493;
+            font-family: 'Georgia', serif;
+            font-size: 3em;
+        }
+
+        p {
+            text-align: center;
+            color: #333;
+        }
+
+        select, input[type="button"] {
+            margin: 10px;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: 2px solid #ff1493;
+            background-color: #ffffff;
+            color: #ff1493;
+            cursor: pointer;
+        }
+
+        select:hover, input[type="button"]:hover {
+            background-color: #ff1493;
+            color: #ffffff;
+        }
+
+        .regresar-btn {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border-radius: 8px;
+            border: 2px solid #ff1493;
+            background-color: #ffffff;
+            color: #ff1493;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .regresar-btn:hover {
+            background-color: #ff1493;
+            color: #ffffff;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ff1493;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #verificar {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body onload="Generar()">
+    <a href="index.html" class="regresar-btn">Regresar al menú</a>
+    <h1>Cuadrado Mágico</h1>
+    <p>Los cuadrados mágicos son un conjunto de números enteros diferentes colocados en las casillas de un cuadrado, y se caracterizan porque la suma de sus filas, columnas y diagonales principales es siempre la misma.</p>
+    <p>Seleccione el tamaño del cuadrado:</p>
+    <select id="lados" onchange="Generar()">
+        <option value="2">2x2</option>
+        <option value="3">3x3</option>
+        <option value="4">4x4</option>
+        <option value="5">5x5</option>
+    </select>
+    <input type="button" value="Generar" onclick="Generar()">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <input type="button" value="Ejemplo de cuadrado" onclick="EjemploCuadrado()">
+    <input type="button" value="Ejemplo de cuadrado mágico" onclick="EjemploMagico()">
+    <table border="0.5" id="cuadrado" style="border-collapse: collapse;"></table>
+    <p id="verificar" style="color: crimson;">No es cuadrado mágico</p>
+</body>
+</html>

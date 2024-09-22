@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 2</title>
+    <script src="funciones2.js" defer></script>
+    <style>
+        body {
+            background-color: #fff7fd;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .large-title {
+            font-size: 3em;
+            text-align: center;
+            color: #ff1493;
+            margin: 20px 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .content-box {
+            background-color: #ff1493;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-box p {
+            margin: 10px 0;
+            padding: 0;
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .button-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .button-list input, .button-list a {
+            background-color: #ffffff;
+            color: #ff1493;
+            border: 2px solid #ff1493;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button-list input:hover, .button-list a:hover {
+            background-color: #ff1493;
+            color: #ffffff;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ff1493;
+            padding: 10px;
+            text-align: center;
+            color: #ff1493;
+        }
+
+        #resultados {
+            text-align: left;
+            margin-top: 20px;
+        }
+       
+        #tablaVertical {
+    margin: 0 auto;
+    display: block;
+    margin-left: 500px; /* Ajusta este valor para centrar mejor */
+}
+
+    </style>
+</head>
+
+<body onload="Aleatorio()">
+    <h1 class="large-title">𓍢ִ໋🌷͙֒ Arreglos 2 🌷͙֒𓍢ִ໋</h1>
+
+    <div class="content-box">
+        <p>
+            Capture un arreglo de 10 elementos de tipo entero,<br>
+            imprima el arreglo de forma vertical y horizontal,<br>
+            imprima el arreglo de forma ascendente y descendente,<br>
+            encuentre el elemento menor, el mayor, la suma,<br>
+            el promedio o media, la mediana y la moda.<br>
+            Nota: el input donde se capturan los números y el botón se deben deshabilitar al capturar el último elemento del
+            arreglo. El botón generar empieza deshabilitado. Valide que el elemento del arreglo sea entero.
+        </p>
+
+        <form action="javascript: Capturar()">
+            <p style="display: inline;" id="contador">Elemento [0]:</p>
+            <input type="number" id="elementoInput" required>
+            <div class="button-list">
+                <input type="submit" value="Capturar" id="capturarBoton">
+                <input type="button" id="reiniciarBoton" value="Reiniciar" onclick="Reiniciar()">
+                <input type="button" value="Generar resultados" id="generarBoton" onclick="Calcular()" disabled>
+                <a href="index.html">Regresar al Menú</a>
+            </div>
+        </form>
+    </div>
+
+    <table id="tablaHorizontal" border="2">
+        <tr id="renglonIndice"></tr>
+        <tr id="renglonDato"></tr>
+    </table>
+
+    <table id="tablaHorizontal2" border="2">
+        <tr id="renglonIndice2"></tr>
+        <tr id="renglonDato2"></tr>
+    </table>
+
+    <table id="tablaHorizontal3" border="2">
+        <tr id="renglonIndice3"></tr>
+        <tr id="renglonDato3"></tr>
+    </table>
+
+    <br>
+
+    <table id="tablaVertical" border="2" style="display: inline-block;"></table>
+    <table id="tablaVertical2" border="2" style="display: inline-block;"></table>
+    <table id="tablaVertical3" border="2" style="display: inline-block;"></table>
+
+    <p id="resultados"></p>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama</title>
+    <link rel="stylesheet" href="./css/estilosmemorama.css">
+    <script src="funcionamiento.js" defer></script>
+</head>
+<body onload="revolver(); Fondo();">
+
+    <!-- Título grande -->
+    <h1 class="large-title">𓍢ִ໋🌷͙֒JUEGO DE MEMORIA𓍢ִ໋🌷͙֒</h1>
+
+    <!-- Mostrar cronómetro y récord -->
+    <div class="info-box">
+        <h2 id="cronometro">Tiempo: 0s</h2>
+        <h2 id="record">Mejor Tiempo: N/A</h2>
+    </div>
+
+    <!-- Tabla del juego -->
+    <table id="tablita">
+        <tr>
+            <td><img src="img/0.jpg" id="0" alt="" class="imagen" onclick="cambiarImagen(this, 0)"></td>
+            <td><img src="img/0.jpg" id="1" alt="" class="imagen" onclick="cambiarImagen(this, 1)"></td>
+            <td><img src="img/0.jpg" id="2" alt="" class="imagen" onclick="cambiarImagen(this, 2)"></td>
+            <td><img src="img/0.jpg" id="3" alt="" class="imagen" onclick="cambiarImagen(this, 3)"></td>
+            <td><img src="img/0.jpg" id="4" alt="" class="imagen" onclick="cambiarImagen(this, 4)"></td>
+            <td><img src="img/0.jpg" id="5" alt="" class="imagen" onclick="cambiarImagen(this, 5)"></td>
+        </tr>
+        <tr>
+            <td><img src="img/0.jpg" id="6" alt="" class="imagen" onclick="cambiarImagen(this, 6)"></td>
+            <td><img src="img/0.jpg" id="7" alt="" class="imagen" onclick="cambiarImagen(this, 7)"></td>
+            <td><img src="img/0.jpg" id="8" alt="" class="imagen" onclick="cambiarImagen(this, 8)"></td>
+            <td><img src="img/0.jpg" id="9" alt="" class="imagen" onclick="cambiarImagen(this, 9)"></td>
+            <td><img src="img/0.jpg" id="10" alt="" class="imagen" onclick="cambiarImagen(this, 10)"></td>
+            <td><img src="img/0.jpg" id="11" alt="" class="imagen" onclick="cambiarImagen(this, 11)"></td>
+        </tr>
+        <tr>
+            <td><img src="img/0.jpg" id="12" alt="" class="imagen" onclick="cambiarImagen(this, 12)"></td>
+            <td><img src="img/0.jpg" id="13" alt="" class="imagen" onclick="cambiarImagen(this, 13)"></td>
+            <td><img src="img/0.jpg" id="14" alt="" class="imagen" onclick="cambiarImagen(this, 14)"></td>
+            <td><img src="img/0.jpg" id="15" alt="" class="imagen" onclick="cambiarImagen(this, 15)"></td>
+            <td><img src="img/0.jpg" id="16" alt="" class="imagen" onclick="cambiarImagen(this, 16)"></td>
+            <td><img src="img/0.jpg" id="17" alt="" class="imagen" onclick="cambiarImagen(this, 17)"></td>
+        </tr>
+    </table>
+
+    <h1 id="contador">Pares encontrados: 0</h1>
+
+    <!-- Botones de acción -->
+    <div class="button-list">
+        <input type="button" value="Reiniciar" onclick="Reiniciar()">
+        <a href="index.html">Regresar al Menú</a>
+    </div>
+
+    <p id="Salida"></p>
+</body>
+</html>
+
+
+

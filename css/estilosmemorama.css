@@ -1,0 +1,107 @@
+body {
+    background-color: #fff7fd;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.title-box {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+.spaced {
+    margin-left: 40px;
+}
+
+.large-title {
+    font-size: 3em;
+    text-align: center;
+    color: #ff1493;
+    margin: 20px 0;
+    font-family: 'Georgia', serif;
+}
+
+.highlighted-title {
+    color: #ff1493;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.imagen {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ff1493;
+    border-radius: 8px;
+}
+
+table {
+    background-color: #fff;
+    border-collapse: collapse;
+    margin: 20px auto;
+    border: 1px solid #ff1493;
+}
+
+h1 {
+    text-align: center;
+    color: #ff1493;
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+}
+
+.button-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-list input, .button-list a {
+    background-color: #ffffff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button-list input:hover, .button-list a:hover {
+    background-color: #ff1493;
+    color: #ffffff;
+}
+
+input[type="button"] {
+    font-size: larger;
+}
+
+.info-box {
+    text-align: center;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.info-box h2 {
+    color: #ff1493;
+    font-size: 1.5em;
+}
+
+table {
+    background-color: #fff;
+    border-collapse: collapse;
+    margin: 20px auto;
+    border: 1px solid #ff1493;
+    background-size: contain; /* Ajusta la imagen al tamaño de la tabla sin recortarla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen de fondo */
+}
+

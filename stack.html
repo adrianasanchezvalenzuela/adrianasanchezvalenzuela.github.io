@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stack.css">
+    <script src="stack.js"></script>
+</head>
+<body onload="Aleatorias()">
+    <div class="button-list">
+    <a href="index.html" class="back-button">< Volver </a> 
+</div>
+    <h1>𓍢ִ໋🌷͙֒PILA GENERICA🌷͙֒𓍢</h1>
+    <div class="content-box">
+    Desarrolle una aplicacִ໋ion que muestre un objeto tipo pila, e implemente los metodos Push(), Pop(), Peek(), Clear(), Find(),
+    isEmpty()
+    <div class="button-list">
+    <br>Elemento: <input type="text" id="Elemento" onkeyup="CambioTexto()">
+    <input type="button" id="iPush" value="Push" onclick="Aleatorias(); Push();">
+    <input type="button" value="Pop()" id="iPop" onclick="Pop()">
+    <input type="button" value="Peek()" id="iPeek" onclick="Peek()">
+    <input type="button" value="Clear()" id="iClear" onclick="Clear()">
+    <input type="button" value="Find()" id="iFind" onclick="Find();">
+    <input type="button" value="isEmpty()" id="iEmpty" onclick="isEmpty()";>
+    </div>
+</div>
+    <table>
+        <tbody id="tabla"></tbody>
+    </table>
+    <h3 id="mensaje"></h3>
+    <img src="Pila.jpg" alt="" width="500" height="400">
+</body>
+</html>

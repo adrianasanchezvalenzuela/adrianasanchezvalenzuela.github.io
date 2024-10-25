@@ -1,0 +1,88 @@
+table,tr,td{
+    border-collapse: collapse ;
+}
+
+#mensaje{
+    position: fixed;
+    top: 70%;
+    left: 75%;
+    color: red;
+}
+
+img{
+    position: fixed;
+    top: 150px;
+    right: 20px;
+}
+
+body {
+    background-color: pink; /* Color de fondo */
+    font-family: Arial, sans-serif; /* Fuente general */
+    margin: 20px; /* Espacio alrededor del contenido */
+}
+
+h1, h3 {
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.button-list input, .button-list a {
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #ff1493; /* Color del texto rosa */
+    border: 2px solid #ff1493; /* Borde rosa */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1em; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-family: 'Arial', sans-serif; /* Tipo de fuente */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    display: inline-block; /* Alinea los elementos en línea */
+}
+
+.content-box {
+    background-color: #feffff; /* Rosa fucsia */
+    padding: 30px; /* Espacio interior del cuadro */
+    border-radius: 8px; /* Bordes redondeados */
+    max-width: 900px; /* Ancho máximo del cuadro */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    border: 1px solid #ddd; /* Borde gris claro */
+}
+
+#mensaje {
+    position: fixed;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste para centrar */
+    text-align: center; /* Centrar el texto */
+    color: #ff1493; /* Color del texto */
+    font-size: 1.5em; /* Tamaño de fuente */
+    font-family: 'Arial', sans-serif; /* Estilo de fuente */
+    background-color: #f0f0f0; /* Color de fondo */
+    padding: 10px; /* Espaciado alrededor del texto */
+    border: 2px solid #ff1493; /* Borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+
+/* Estilo para las celdas de la pila */
+#tabla td {
+    padding: 10px;
+    font-size: 1.2em;
+    color: #4B0082; /* Color de texto morado oscuro */
+    text-align: center;
+}
+
+/* Estilo para el borde de cada celda de la pila */
+#tabla tr td:nth-child(2) {
+    border: 2px solid #ff1493; /* Borde rosa */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #fff0f5; /* Fondo rosa claro */
+}
+
+/* Estilo específico para el texto 'tope->' */
+#tabla tr:first-child td:first-child {
+    font-weight: bold;
+    color: #ff1493; /* Color rosa */
+}
+
+

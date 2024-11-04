@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pila2.css">
+   |<script src="pila2.js"></script>
+</head>
+<body>
+    <div class="button-list">
+            <a href="index.html" class="back-button">< Volver </a> 
+    <h1>𓍢ִ໋🌷EVALUACIÓN DE EXPRESIÓN POSTFIJA🌷𓍢ִ໋</h1>
+    <label for="exp">Expresión:</label> 
+    <input type="text" name="" id="exp" value="3 4 * 2 5 + - 4 * 2 /">
+    <input type="button" id="botonEval" value="Evaluar" onclick="Evaluar()">
+    <input type="button" id="botonPaso" value="Paso a paso" onclick="pasoAPaso()">
+    <input type="button" id="botonRein" value="Reiniciar" onclick="Reinicio()">
+    <p id="textResultado">Resultado: </p>
+    <table><tbody id="tabla"></tbody></table>
+    <div id="pasos-container">
+    <p id="textPaso"> Pasos: <br></p>
+</div>
+    </div>
+    <img src="postfija.png" alt="">
+</body>
+</html>

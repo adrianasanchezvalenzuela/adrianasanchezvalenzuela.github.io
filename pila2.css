@@ -1,0 +1,110 @@
+body {
+    background-color: pink; /* Color de fondo */
+    font-family: Arial, sans-serif; /* Fuente general */
+    margin: 20px; /* Espacio alrededor del contenido */
+}
+
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #cc3366;
+    margin-right: 10px;
+}
+
+#textResultado {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #cc3366;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ffe6f0;
+    border: 2px solid #ff99bb;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+#textPaso{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+}
+
+input[type="text"]{
+    width: 800px; 
+    font-weight: bolder; 
+    font-size: 1.5em;
+}
+
+.button-list input, .button-list a {
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #ff1493; /* Color del texto rosa */
+    border: 2px solid #ff1493; /* Borde rosa */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1em; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-family: 'Arial', sans-serif; /* Tipo de fuente */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    display: inline-block; /* Alinea los elementos en línea */
+}
+
+#tabla {
+    width: 500%;
+    border-collapse: collapse;
+    font-size: 18px; /* Tamaño de fuente más grande */
+}
+
+#tabla td {
+    background-color: #ffe6f2; /* Fondo rosado claro */
+    border: 2px solid #ff99bb; /* Borde rosado */
+    padding: 15px; /* Espaciado más amplio */
+    text-align: center;
+    font-weight: bold;
+    color: #cc3366; /* Texto rosado oscuro */
+}
+
+#tabla tr:nth-child(even) td {
+    background-color: #ffd6e8; /* Fondo alternativo para filas pares */
+}
+
+#tabla tr:first-child td {
+    border-top: 4px solid #ff6699; /* Borde superior para la primera fila */
+}
+
+#tabla td:first-child {
+    border-left: 4px solid #ff6699; /* Borde izquierdo para la primera celda de cada fila */
+}
+
+#tabla td:last-child {
+    border-right: 4px solid #ff6699; /* Borde derecho para la última celda de cada fila */
+}
+
+#tabla tr:last-child td {
+    border-bottom: 4px solid #ff6699; /* Borde inferior para la última fila */
+}
+
+#pasos-container {
+    background-color: white; /* Fondo blanco */
+    position: fixed;
+    border: 2px solid #ff99bb; /* Borde rosado */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 200px; /* Espacio interior */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    max-width: 200px; /* Ancho máximo del cuadro */
+    color: #cc3366; /* Texto rosado oscuro */
+    font-size: 16px; /* Tamaño de texto */
+    margin-left: auto; /* Centramos horizontalmente */
+    margin-right: auto; /* Centramos horizontalmente */
+    text-align: left;
+    top: 210px; /* Ajusta esta distancia desde la parte superior */
+    right: 400px; /* Ajusta esta distancia desde la derecha */
+}
+
+#textPaso {
+    margin: 0;
+}
+
+img {
+    width: 500px; /* Ancho fijo */
+    height: 200px; /* Altura fija */
+}

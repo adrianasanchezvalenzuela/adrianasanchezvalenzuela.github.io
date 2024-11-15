@@ -1,0 +1,8 @@
+body{background-color:#ff1493;font-family:'Arial',sans-serif;margin:0;padding:20px;color:#333}.container{max-width:920px;margin:0
+    auto;background-color:#dec9e0;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.back-button{display:inline-block;color:#ff1493;text-decoration:none;margin-bottom:20px;font-size:1.2em;font-weight:bold}h1{text-align:center;font-size:40px;color:#ff1493;margin-bottom:20px;font-family:'Georgia',serif}.form-section{margin-bottom:30px}label{font-size:1.2em;font-weight:bold;color:#c36;margin-bottom:10px;display:inline-block}textarea{width:97%;height:150px;resize:none;font-size:18px;line-height:1.5;padding:10px;border:2px
+    solid #ff1493;border-radius:8px;margin-bottom:20px;background-color:#fafafa;color:#333}.select-container{display:flex;gap:10px;margin-bottom:20px}select{width:80px;padding:8px;font-size:16px;border:2px
+    solid #ff1493;border-radius:5px;background-color:#fff;color:#ff1493}.button-group
+    input{background-color:#fff;color:#ff1493;border:2px
+    solid #ff1493;border-radius:5px;padding:10px
+    20px;font-size:1em;cursor:pointer;font-family:'Arial',sans-serif;transition:all 0.3s ease;margin-right:10px}.button-group input:hover{background-color:#ff1493;color:#fff}input[type="button"]:hover{background-color:#ff1493;color:white;box-shadow:0 4px 8px rgba(0,0,0,0.1)}#encriptedMessage{background-color:#fafafa;color:#333;border:2px
+    solid #ff1493;border-radius:8px;padding:10px;resize:none}

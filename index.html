@@ -4,107 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducción a los algoritmos y estructura de datos</title>
-    <style>
-        body {
-            background-color: pink; /* Color de fondo del cuerpo */
-            font-family: Arial, sans-serif; /* Fuente general */
-            margin: 20px; /* Espacio alrededor del contenido del body */
-        }
-
-        .title-box {
-            background-color: #ffffff; /* Fondo blanco */
-            padding: 10px; /* Espacio interior del cuadro */
-            border: 1px solid #ddd; /* Borde gris claro */
-            border-radius: 8px; /* Bordes redondeados */
-            display: inline-block; /* Ajusta el tamaño al contenido */
-            margin: 10px 0; /* Espacio arriba y abajo del cuadro */
-            font-family: Arial, sans-serif; /* Fuente */
-        }
-
-        .spaced {
-            margin-left: 40px; /* Espacio antes del texto */
-        }
-
-        .large-title {
-            font-size: 3em; /* Tamaño del texto, ajusta según tus necesidades */
-            text-align: center; /* Centra el texto */
-            color: #ff1493; /* Color del texto */
-            margin: 20px 0; /* Espacio arriba y abajo del título */
-            font-family: 'Georgia', serif; /* Fuente bonita */
-        }
-
-        .highlighted-title {
-            color: #ff1493; /* Rosa fucsia */
-            text-align: center; /* Centra el texto */
-            font-family: 'Courier New', Courier, monospace; /* Fuente bonita */
-            font-size: 2em; /* Tamaño del texto */
-            margin: 20px 0; /* Espacio arriba y abajo */
-        }
-
-        .content-box {
-            background-color: #ff1493; /* Rosa fucsia */
-            color: #ffffff; /* Texto blanco */
-            padding: 20px; /* Espacio interior del cuadro */
-            border-radius: 8px; /* Bordes redondeados */
-            margin: 20px auto; /* Centra el cuadro horizontalmente */
-            max-width: 800px; /* Ancho máximo del cuadro */
-            text-align: center; /* Centra el texto dentro del cuadro */
-            font-family: Arial, sans-serif; /* Fuente del texto */
-            border: 1px solid #ddd; /* Borde gris claro */
-        }
-
-        .content-box ul {
-            list-style-type: none; /* Elimina viñetas de la lista */
-            padding-left: 0; /* Elimina espacio interior izquierdo */
-        }
-
-        .content-box ul li {
-            margin-bottom: 15px; /* Espacio entre elementos de la lista */
-        }
-
-        .content-box p, .content-box ul {
-            margin: 0; /* Elimina margen adicional */
-            padding: 0; /* Elimina relleno adicional */
-        }
-
-        .content-box a {
-            color: #ffffff; /* Color del texto de los enlaces */
-            text-decoration: none; /* Elimina subrayado */
-        }
-
-        .content-box a:hover {
-            text-decoration: underline; /* Subrayado al pasar el cursor sobre el enlace */
-        }
-
-        .button-list {
-            display: flex; /* Usar flexbox para organizar botones */
-            flex-direction: row; /* Organiza los botones en una fila */
-            align-items: center; /* Centra los botones horizontalmente */
-            gap: 10px; /* Espacio entre botones */
-            padding: 0; /* Elimina padding adicional */
-        }
-
-        .button-list button {
-            background-color: #ffffff; /* Fondo blanco para los botones */
-            color: #ff1493; /* Texto rosa fucsia */
-            border: 2px solid #ff1493; /* Borde rosa fucsia */
-            border-radius: 5px; /* Bordes redondeados */
-            padding: 10px 20px; /* Espacio interior del botón */
-            font-size: 1.2em; /* Tamaño del texto en el botón */
-            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-            font-family: 'Arial', sans-serif; /* Fuente del texto en el botón */
-        }
-
-        .button-list button a {
-            color: #ff1493; /* Color del texto dentro del botón */
-            text-decoration: none; /* Elimina subrayado */
-        }
-
-        .button-list button:hover {
-            background-color: #ff1493; /* Fondo rosa fucsia al pasar el cursor */
-            color: #ffffff; /* Texto blanco al pasar el cursor */
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="title-box">
@@ -119,17 +19,15 @@
     <div class="content-box">
         <p><strong>Las estructuras de datos que veremos en el semestre son:</strong></p>
         <div class="button-list">
-            <button>Arreglo</button>
-            <button>Matrices</button>
-            <button>Listas</button>
-            <button>Pila</button>
-            <button>Árbol</button>
-            <button>Cola</button>
-            <button>Grafo</button>
+            <button><a href="#algoritmo">Algoritmo</a></button>
+            <button><a href="#arreglo">Arreglo</a></button>
+            <button><a href="#matriz">Matrices</a></button>
+            <button><a href="#pila">Pila</a></button>
+            <button><a href="#cola">Cola</a></button>
         </div>
         <p style="margin-bottom: 20px;"></p>
-
-        <h3>Algoritmo</h3>
+         
+        <h3 id="algoritmo">Algoritmo</h3>
         <p>Un algoritmo es un conjunto de instrucciones o reglas definidas y no-ambiguas, ordenadas y finitas que permite, típicamente, solucionar un problema, realizar un cómputo, procesar datos y llevar a cabo otras tareas o actividades.</p>
         
         <div class="button-list">
@@ -141,7 +39,7 @@
 
         </div>
 
-        <h3>Arreglo</h3>
+        <h3 id="arreglo">Arreglo</h3>
         <p>Un arreglo es como una fila ordenada de casillas, donde cada casilla guarda un valor, como números o palabras, en un orden fijo.</p>
         <div class="button-list" style="justify-content: center;">
             <button><a href="Arreglo1.html">Arreglo 1</a></button>
@@ -151,7 +49,7 @@
             
         </div>
         <div>
-            <h3>Matriz</h3>
+            <h3 id="matriz">Matrices</h3>
             <p>
         Una matriz es un conjunto de números o símbolos organizados en filas y columnas, de forma rectangular.
             </p>
@@ -160,7 +58,7 @@
                 <button><a href="tiktaktoe.html">Tic Tac Toe</a></button>
         </div>
         <div>
-            <h3>Pila</h3>
+            <h3 id="pila">Pila</h3>
             <p>
             Se define formalmente como una colección de datos a los cuales se puede acceder mediante un extremo.
             </p>
@@ -168,7 +66,16 @@
                 <button><a href="stack.html">Pila</a></button>
                 <button><a href="pila2.html">Expresión Postfija</a></button>
         </div>
-        
+        <div>
+            <h3 id="cola">Cola</h3>
+            <p>
+                Estructura de datos que almacena elementos en una lista y permite acceder a ellos por uno de los dos extremos. Se caracteriza por seguir el principio FIFO (First In First Out), es decir, el primer elemento en entrar es el primero en salir.
+            </p>
+            <div class="button-list" style="justify-content: center;">
+                <button><a href="queue.html">Cola</a></button>
+                <button><a href="juliocesar.html">Encriptador</a></button>
+
+        </div>
         
 </body>
 </html>

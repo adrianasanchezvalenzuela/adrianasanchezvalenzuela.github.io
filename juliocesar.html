@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <script src="juliocesar.js"></script>
+    <link rel="stylesheet" href="juliocesar.css">
+</head>
+<body onload="optionKey()">
+    <div class="container">
+        <a href="index.html" class="back-button">← Volver</a>
+        <h1>𓍢ִ໋📧ALGORITHM CAESAR CIPHER📧𓍢ִ໋</h1>
+        <div class="form-section">
+            <label for="originalMessage">🔓Message:</label>
+            <textarea id="originalMessage" rows="20" onkeydown="allows(event)" onkeyup="capital(this)"></textarea>
+            <label for="key1">🗝️Key:</label>
+            <div class="select-container">
+                <select id="key1"></select>
+                <select id="key2"></select>
+                <select id="key3"></select>
+                <select id="key4"></select>
+                <select id="key5"></select>
+                <select id="key6"></select>
+            </div>
+            <div class="button-group">
+                <input type="button" value="Example 1" onclick="example1()">
+                <input type="button" value="Example 2" onclick="example2()">
+                <input type="button" value="Clear" onclick="clear1()">
+                <input type="button" value="Encript" onclick="encript()">
+                <input type="button" value="Save Key" onclick="saveKey()">
+                <input type="button" value="Save Encripted Message" onclick="saveMessage()">
+            </div>
+
+        </div>
+        <label for="encriptedMessage">🔒Encripted Message:🔒</label>
+        <textarea id="encriptedMessage" rows="20" readonly></textarea>
+    </div>
+</body>
+</html>

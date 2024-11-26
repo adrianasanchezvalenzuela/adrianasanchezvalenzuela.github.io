@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Decipher</title>
+    <link rel="stylesheet" href="Desencriptado.css">
+    <script src="Desencriptado.js"></script>
+</head>
+<body onload="load()">
+    <div class="container">
+        <a href="index.html" class="back-button">← Volver</a>
+        <h1>Algorithm Caesar Cipher</h1>
+
+        <div class="form-section">
+            <p>Encrypted message:</p>
+            <textarea id="EncryptedMessage" rows="20" readonly></textarea><br>
+        </div>
+
+        <div class="form-section">
+            <p>Key:</p>
+            <div class="select-container">
+                <select id="key1" disabled>
+                    <option value="">--</option>
+                </select>
+                <select id="key2" disabled>
+                    <option value="">--</option>
+                </select>
+                <select id="key3" disabled>
+                    <option value="">--</option>
+                </select>
+                <select id="key4" disabled>
+                    <option value="">--</option>
+                </select>
+                <select id="key5" disabled>
+                    <option value="">--</option>
+                </select>
+                <select id="key6" disabled>
+                    <option value="">--</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <input type="button" value="Clear" onclick="reset()">
+            <input type="file" id="keyFile" accept=".txt" style="display: none;"> 
+            <input type="button" value="Load Key" onclick="document.getElementById('keyFile').click()">
+
+            <input type="file" id="encryptedfile" accept=".txt" style="display: none;"> 
+            <input type="button" value="Load encrypted file" onclick="document.getElementById('encryptedfile').click()">
+            
+            <input type="button" value="Decoded" onclick="decrypt()">
+            <input type="button" value="Save Decoded message" onclick="saveMessage()">
+        </div>
+
+        <div class="form-section">
+            <p>Original Message:</p>
+            <textarea id="originalMessage" rows="20"></textarea><br>
+        </div>
+    </div>
+</body>
+</html>

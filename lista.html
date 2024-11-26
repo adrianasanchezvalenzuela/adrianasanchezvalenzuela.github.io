@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+    <link rel="stylesheet" href="lista.css">
+    <script src="lista.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Volver</a>
+        <h1>Lista</h1>
+        <div class="form-section">
+            <label for="Elemento">Elemento:</label>
+            <input type="text" id="Elemento" onkeyup="CambioTexto()">
+            <input type="button" value="push()" id="pushh" onclick="pushhh()">
+            <input type="button" value="pop()">
+            <input type="button" value="shift()">
+            <input type="button" value="unshift()" id="unshiftt">
+            <input type="button" value="indexOf()" id="indexx">
+            <input type="button" value="includes()" id="includess">
+            <input type="button" value="sort()">
+            <input type="button" value="reverse()">
+        </div>
+        <div class="form-section">
+            <label for="Posicion">Posición:</label>
+            <input type="number" id="Posicion" min="0" onkeyup="CambioTexto()">
+            <input type="button" value="insert_at()" id="insertt">
+            <input type="button" value="clear()">
+        </div>
+        <table>
+            <tbody id="tabla"></tbody>
+        </table>
+    </div>
+</body>
+</html>

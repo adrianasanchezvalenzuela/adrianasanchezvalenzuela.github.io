@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotería PANS</title>
+    <!-- Estilos CSS -->
+    <style>
+        /* Reset de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Estilos generales */
+        body {
+            background-color: #fefcf9; /* Fondo crema claro */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff; /* Blanco para el contenedor */
+        }
+
+        /* Imagen del logo */
+        .logo img {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        /* Botones */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .buttons a {
+            display: block;
+            padding: 15px;
+            background-color: #5b8a72; /* Verde más suave, combina con el logo */
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .buttons a:hover {
+            background-color: #3d6f5b; /* Verde más oscuro al pasar el cursor */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Diseño responsivo */
+        @media (min-width: 600px) {
+            .buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .buttons a {
+                flex: 1;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Imagen del logo -->
+        <div class="logo">
+            <img src="cartas/cartalogo.png" alt="Logo de Lotería PANS">
+        </div>
+
+        <!-- Botones -->
+        <div class="buttons">
+            <a href="cartas.html">Cartas</a>
+            <a href="tableros.html">Tableros</a>
+        </div>
+    </div>
+</body>
+</html>

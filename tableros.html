@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Lotería</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fefcf9;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #5b8a72;
+        }
+
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        .buttons button {
+            background-color: #5b8a72;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .buttons button:hover {
+            background-color: #3d6f5b;
+        }
+
+        .imagenes-container, .tablero-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+            width: 320px;
+        }
+
+        .imagenes-container img, .tablero-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .imagenes-container img:hover, .tablero-container img:hover {
+            transform: scale(1.1);
+            border: 2px solid #5b8a72;
+        }
+
+        .imagenes-container img.selected, .tablero-container img.selected {
+            border: 3px solid #d9534f;
+        }
+
+        #mensajeLoteria {
+            font-size: 2em;
+            font-weight: bold;
+            color: #d9534f;
+            display: none;
+            margin-top: 20px;
+        }
+
+        #btnEmpezar {
+            display: none;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #btnEmpezar:hover {
+            background-color: #a94442;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tablero de Lotería</h1>
+
+    <div class="buttons">
+        <button onclick="generarTableroAleatorio()">Tablero Aleatorio</button>
+        <button onclick="mostrarImagenes()">Hacer tu Tablero</button>
+    </div>
+
+    <div class="imagenes-container" id="imagenesContainer" style="display: none;"></div>
+
+    <button id="btnEmpezar" onclick="empezarJuego()">Empezar</button>
+
+    <div class="tablero-container" id="tableroContainer" style="display: none;"></div>
+
+    <div id="mensajeLoteria">¡Lotería!</div>
+
+    <script>
+        const todasLasCartas = Array.from({ length: 32 }, (_, i) => `cartas/carta${i + 1}.png`);
+        let cartasSeleccionadas = [];
+        let tablero = [];
+
+        const imagenesContainer = document.getElementById('imagenesContainer');
+        const tableroContainer = document.getElementById('tableroContainer');
+        const mensajeLoteria = document.getElementById('mensajeLoteria');
+        const btnEmpezar = document.getElementById('btnEmpezar');
+
+        // Mostrar imágenes para seleccionar el tablero
+        function mostrarImagenes() {
+            imagenesContainer.innerHTML = '';
+            todasLasCartas.forEach(carta => {
+                const img = document.createElement('img');
+                img.src = carta;
+                img.onclick = () => seleccionarImagen(img, carta);
+                imagenesContainer.appendChild(img);
+            });
+            imagenesContainer.style.display = 'grid';
+            btnEmpezar.style.display = 'block';
+            tableroContainer.style.display = 'none';
+            mensajeLoteria.style.display = 'none';
+            cartasSeleccionadas = [];
+        }
+
+        // Seleccionar o deseleccionar imagen
+        function seleccionarImagen(img, carta) {
+            if (cartasSeleccionadas.includes(carta)) {
+                cartasSeleccionadas = cartasSeleccionadas.filter(c => c !== carta);
+                img.classList.remove('selected');
+            } else if (cartasSeleccionadas.length < 16) {
+                cartasSeleccionadas.push(carta);
+                img.classList.add('selected');
+            }
+        }
+
+        // Generar un tablero aleatorio
+        function generarTableroAleatorio() {
+            cartasSeleccionadas = [];
+            while (cartasSeleccionadas.length < 16) {
+                const cartaAleatoria = todasLasCartas[Math.floor(Math.random() * todasLasCartas.length)];
+                if (!cartasSeleccionadas.includes(cartaAleatoria)) {
+                    cartasSeleccionadas.push(cartaAleatoria);
+                }
+            }
+            empezarJuego();
+        }
+
+        // Iniciar el juego con las cartas seleccionadas
+        function empezarJuego() {
+            if (cartasSeleccionadas.length < 16) {
+                alert('Selecciona 16 cartas para empezar.');
+                return;
+            }
+            tableroContainer.innerHTML = '';
+            cartasSeleccionadas.forEach(carta => {
+                const img = document.createElement('img');
+                img.src = carta;
+                img.onclick = () => toggleSeleccion(img);
+                tableroContainer.appendChild(img);
+            });
+            imagenesContainer.style.display = 'none';
+            btnEmpezar.style.display = 'none';
+            tableroContainer.style.display = 'grid';
+            mensajeLoteria.style.display = 'none';
+        }
+
+        // Seleccionar o deseleccionar una carta del tablero
+        function toggleSeleccion(img) {
+            img.classList.toggle('selected');
+            verificarLoteria();
+        }
+
+        // Verificar si todas las cartas están seleccionadas
+        function verificarLoteria() {
+            const seleccionadas = document.querySelectorAll('.tablero-container img.selected');
+            if (seleccionadas.length === 16) {
+                mensajeLoteria.style.display = 'block';
+            } else {
+                mensajeLoteria.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
